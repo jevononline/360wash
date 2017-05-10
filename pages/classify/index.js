@@ -2,7 +2,7 @@ const App = getApp()
 
 Page({
     data: {
-        activeIndex: 0, 
+        activeIndex: 0,
         goods: {},
         classify: {},
         prompt: {
@@ -47,10 +47,10 @@ Page({
                 classify.params.page = data.data.paginate.next
                 classify.params.limit = data.data.paginate.perPage
                 this.setData({
-                    classify: classify, 
-                    'prompt.hidden': classify.items.length, 
-                    activeIndex: 0, 
-                    'goods.params.type': classify.items[0]._id, 
+                    classify: classify,
+                    'prompt.hidden': classify.items.length,
+                    activeIndex: 0,
+                    'goods.params.type': classify.items[0]._id,
                 })
 
                 this.getGoods()
@@ -74,8 +74,8 @@ Page({
         this.initGoods()
 
         this.setData({
-            activeIndex: index, 
-            'goods.params.type': id, 
+            activeIndex: index,
+            'goods.params.type': id,
         })
 
         this.getGoods()
@@ -130,8 +130,8 @@ Page({
         .then(data => {
             console.log(data)
             this.setData({
-                deviceWidth: data.windowWidth, 
-                deviceHeight: data.windowHeight, 
+                deviceWidth: data.windowWidth,
+                deviceHeight: data.windowHeight,
             })
         })
     },
