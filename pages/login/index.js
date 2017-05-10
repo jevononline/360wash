@@ -91,13 +91,16 @@ Page({
 	signIn(cb) {
 		if (App.WxService.getStorageSync('token')) return
 		App.HttpService.signIn({
-			username: 'admin',
-			password: '123456',
+			clientType: 'M',
+			mobileNo: '15800911536',
+			password: 'AAbb3344',
+			pictureCode: 8888,
+			machineNo: 9999999999
 		})
 		.then(data => {
 			console.log(data)
-			if (data.meta.code == 0) {
-				App.WxService.setStorageSync('token', data.data.token)
+			if (data.resultCode == 0) {
+				App.WxService.setStorageSync('token', data.data.sessionKey)
 				cb()
 			}
 		})

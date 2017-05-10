@@ -17,9 +17,12 @@ class Service extends ServiceBase {
 			cart        : '/cart',
 			address     : '/address',
 			order       : '/order',
+			homepage        : '/homepage/recommend'
         }
 	}
-
+	wechatHomePage(params) {
+		return this.getRequest(this.$$path.homepage, params)
+	}
 	wechatSignUp(params) {
 		return this.postRequest(this.$$path.wechatSignUp, params)
 	}
@@ -33,7 +36,7 @@ class Service extends ServiceBase {
 	}
 
 	signIn(params) {
-		return this.postRequest(this.$$path.signIn, params)
+		return this.getRequest(this.$$path.signIn, params)
 	}
 
 	signOut() {
