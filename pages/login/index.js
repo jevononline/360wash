@@ -53,17 +53,17 @@ Page({
 		if (App.WxService.getStorageSync('token')) return
 		App.WxService.login()
 		.then(data => {
-			console.log('wechatSignIn', data.code)
+			console.log('wechatSignIn', data.resultCode)
 			return App.HttpService.wechatSignIn({
-				code: data.code
+				code: data.resultCode
 			})
 		})
 		.then(data => {
 			console.log('wechatSignIn', data)
-			if (data.meta.code == 0) {
-				App.WxService.setStorageSync('token', data.data.token)
+			if (data.resultCode == 0) {
+				App.WxService.setStorageSync('token', data.data.sessionKey)
 				cb()
-			} else if(data.meta.code == 40029) {
+			} else if(data.resultCode == 40029) {
 				App.showModal()
 			} else {
 				App.wechatSignUp(cb)
@@ -73,17 +73,17 @@ Page({
 	wechatSignUp(cb) {
 		App.WxService.login()
 		.then(data => {
-			console.log('wechatSignUp', data.code)
+			console.log('wechatSignUp', data.resultCode)
 			return App.HttpService.wechatSignUp({
-				code: data.code
+				code: data.resultCode
 			})
 		})
 		.then(data => {
 			console.log('wechatSignUp', data)
-			if (data.meta.code == 0) {
-				App.WxService.setStorageSync('token', data.data.token)
+			if (data.resultCode == 0) {
+				App.WxService.setStorageSync('token', data.data.sessionKey)
 				cb()
-			} else if(data.meta.code == 40029) {
+			} else if(data.resultCode == 40029) {
 				App.showModal()
 			}
 		})
