@@ -2,18 +2,18 @@
 
 <template name="list">
     <template is="prompt" data="{{ prompt }}"/>
-    
+
 	<view class="scroll-list">
-		<view class="weui-panel weui-panel_access" wx:if="{{ !!goods.paginate.total }}">
+		<view class="weui-panel weui-panel_access" wx:if="{{ shopList.length }}">
             <view class="weui-panel__bd">
-                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ goods.items }}" wx:key="" bindtap="navigateTo" data-id="{{ item._id }}">
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ shopList }}" wx:key="" bindtap="navigateTo" data-id="{{ item.shopId }}">
                     <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                        <image class="weui-media-box__thumb" src="{{ item.thumb_url }}" />
+                        <image class="weui-media-box__thumb" src="../../assets/images/screenshots/favicon.jpg" />
                     </view>
                     <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                        <view class="weui-media-box__title">{{ item.name }}</view>
+                        <view class="weui-media-box__title">{{ item.shopName }}</view>
                         <view class="weui-media-box__desc">
-                            <text class="text-orangered">¥ {{ item.price }}</text>
+                            <text class="text-orangered">地址： {{ item.shopLocation }}</text>
                         </view>
                     </view>
                 </navigator>

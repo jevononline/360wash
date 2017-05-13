@@ -97,7 +97,7 @@ Page({
 			pictureCode: 8888,
 			machineNo: 9999999999
 		})
-		.then(data => {
+		.then((data) => {
 			console.log(data)
 			if (data.resultCode == 0) {
 				App.WxService.setStorageSync('token', data.data.sessionKey)

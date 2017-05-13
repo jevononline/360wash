@@ -13,6 +13,7 @@ class Service extends ServiceBase {
 			banner      : '/banner',
 			classify    : '/classify',
 			goods       : '/goods',
+			homepage 	: '/homepage/recommend',
 			search      : '/goods/search/all',
 			cart        : '/cart',
 			address     : '/address',
@@ -20,6 +21,7 @@ class Service extends ServiceBase {
 			homepage        : '/homepage/recommend'
         }
 	}
+
 	wechatHomePage(params) {
 		return this.getRequest(this.$$path.homepage, params)
 	}
@@ -37,6 +39,9 @@ class Service extends ServiceBase {
 
 	signIn(params) {
 		return this.getRequest(this.$$path.signIn, params)
+	}
+	homepage(params) {
+		return this.getRequest(this.$$path.homepage, params)
 	}
 
 	signOut() {
