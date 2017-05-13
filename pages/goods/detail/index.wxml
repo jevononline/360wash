@@ -1,3 +1,5 @@
+
+
 <view class="container">
     <view class="swiper-container">
         <swiper class="swiper-box" indicator-dots="{{ indicatorDots }}" vertical="{{ vertical }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}" bindchange="swiperchange">
@@ -19,3 +21,22 @@
         <text>加入购物车</text>
     </view>
 </view>
+
+<view class="scroll-list">
+    <view class="weui-panel weui-panel_access" wx:if="{{ serviceList.length }}">
+        <view class="weui-panel__bd">
+            <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ serviceList }}" wx:key="" bindtap="navigateTo" data-id="{{ item.shopId }}">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb" src="../../assets/images/screenshots/favicon.jpg" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title">{{item.shopId}}{{item.serviceName }}</view>
+                    <view class="weui-media-box__desc">
+                        <text class="price">￥： {{ item.originalPrice }}</text>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+

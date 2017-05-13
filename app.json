@@ -2,7 +2,7 @@
   "pages": [
     "pages/start/index",
     "pages/index/index",
-    "pages/classify/index",
+    "pages/shop/index",
     "pages/cart/index",
     "pages/address/list/index",
     "pages/address/add/index",
@@ -38,7 +38,7 @@
       "selectedIconPath": "assets/images/iconfont-home-active.png",
       "text": "首页"
     }, {
-      "pagePath": "pages/classify/index",
+      "pagePath": "pages/shop/index",
       "iconPath": "assets/images/iconfont-list.png",
       "selectedIconPath": "assets/images/iconfont-list-active.png",
       "text": "门店"
