@@ -11,14 +11,13 @@ class Service extends ServiceBase {
 			signIn      : '/user/login/login',
 			signOut     : '/user/sign/out',
 			banner      : '/banner',
-			classify    : '/classify',
+			shopList    : '/shop/lists',
 			goods       : '/goods',
 			homepage 	: '/homepage/recommend',
 			search      : '/goods/search/all',
 			cart        : '/cart',
 			address     : '/address',
 			order       : '/order',
-			homepage        : '/homepage/recommend'
         }
 	}
 
@@ -43,7 +42,9 @@ class Service extends ServiceBase {
 	homepage(params) {
 		return this.getRequest(this.$$path.homepage, params)
 	}
-
+	shopList(params) {
+		return this.getRequest(this.$$path.shopList, params)
+	}
 	signOut() {
 		return this.postRequest(this.$$path.signOut)
 	}

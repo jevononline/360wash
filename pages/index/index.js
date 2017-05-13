@@ -73,7 +73,7 @@ Page({
         if (!this.data.goods.paginate.hasNext) return
         this.getList()
     },
-    onTapTag(e) {
+    onTapTag(e) {debugger
         const type = e.currentTarget.dataset.type
         const index = e.currentTarget.dataset.index
         const goods = {
