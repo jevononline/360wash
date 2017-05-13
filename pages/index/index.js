@@ -14,18 +14,7 @@ Page({
         prompt: {
             hidden: false,
         },
-        images: [
-            {
-                path: '/assets/images/screenshots/screenshorts-01.png'
-            },
-            {
-                path: '/assets/images/screenshots/screenshorts-02.png'
-            },
-            {
-                path: '/assets/images/screenshots/screenshorts-03.png'
-            }
-
-        ]
+        bannersList: []
     },
     swiperchange(e) {
         // console.log(e.detail.current)
@@ -67,7 +56,7 @@ Page({
 			console.log(data)
 			if (data.resultCode == 0) {
                 this.setData({
-                      images: data.data.bannersList,
+                      bannersList: data.data.bannersList,
                       shopList: data.data.shopList,
                       'prompt.hidden': data.data.shopList.length
                   })

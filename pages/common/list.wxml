@@ -16,6 +16,14 @@
                             <text class="text-orangered">地址： {{ item.shopLocation }}</text>
                         </view>
                     </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">距离 {{ item.distance }}米
+                        </view>
+                        <view class="weui-media-box__desc">
+                            <text class="text-orangered">状态： {{ item.status }}</text>
+                        </view>
+                    </view>
+
                 </navigator>
             </view>
         </view>
