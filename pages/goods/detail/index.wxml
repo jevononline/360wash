@@ -3,7 +3,7 @@
 <view class="container">
     <view class="swiper-container">
         <swiper class="swiper-box" indicator-dots="{{ indicatorDots }}" vertical="{{ vertical }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}" bindchange="swiperchange">
-            <block wx:for="{{ goods.item.images }}" wx:key="">
+            <block wx:for="{{ images }}" wx:key="">
                 <swiper-item>
                     <image src="{{ item.path }}" class="slide-image" data-index="{{ index }}" bindtap="previewImage" />
                 </swiper-item>
@@ -27,7 +27,7 @@
         <view class="weui-panel__bd">
             <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ serviceList }}" wx:key="" bindtap="navigateTo" data-id="{{ item.shopId }}">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                    <image class="weui-media-box__thumb" src="../../assets/images/screenshots/favicon.jpg" />
+                    <image class="weui-media-box__thumb" src="../../../assets/images/screenshots/favicon.jpg" />
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                     <view class="weui-media-box__title">{{item.shopId}}{{item.serviceName }}</view>

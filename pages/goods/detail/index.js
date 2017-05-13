@@ -8,9 +8,20 @@ Page({
         interval: 3000,
         duration: 1000,
         current: 0,
-        goods: {
-            item: {}
-        },
+        images: [
+            {
+                path: '../../../assets/images/screenshots/favicon.jpg'
+            },
+            {
+                path: '../../../assets/images/screenshots/favicon.jpg'
+            },
+            {
+                path: '../../../assets/images/screenshots/favicon.jpg'
+            },
+            {
+                path: '../../../assets/images/screenshots/favicon.jpg'
+            }
+        ],
     },
     swiperchange(e) {
         this.setData({
