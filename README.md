@@ -2,13 +2,7 @@
 
 ## 项目说明：
 
-微信小程序：实现一个移动端小商城，项目持续更新中...
-
 使用技术：**Weui.wxss** 、 **ES6**
-
-前台：[m-mall](https://github.com/skyvow/m-mall)
-
-后台：[m-mall-admin](https://github.com/skyvow/m-mall-admin)
 
 ## 目录结构：
 
@@ -52,15 +46,6 @@ m-mall/
 - app.json — 小程序公共设置
 - app.wxss — 小程序公共样式表
 
-## Features
-
-- [Promise 微信原生API](https://github.com/skyvow/m-mall/blob/master/helpers/WxService.js)
-
-- [Promise wx.request](https://github.com/skyvow/m-mall/blob/master/helpers/ServiceBase.js)
-
-- [RESTful http client](https://github.com/skyvow/m-mall/blob/master/helpers/WxResource.js)
-
-- [Form validation](https://github.com/skyvow/m-mall/blob/master/helpers/WxValidate.js)
 
 ## Promise 微信原生API
 
@@ -99,7 +84,7 @@ import WxResource from 'helpers/WxResource'
 // POST /api/users：新建一个用户
 // PUT /api/users/ID：更新某个指定用户的信息
 // DELETE /api/users/ID：删除某个指定用户
- 
+
 // 创建资源实例对象，接收四个参数url, paramDefaults, actions, options
 const user = new WxResource('/api/users/:id', {id:'@id'}, {
     list: {
@@ -112,32 +97,32 @@ const user = new WxResource('/api/users/:id', {id:'@id'}, {
     stripTrailingSlashes: true,
     suffix: 'Async',
 })
-          
+
 // 获取所有用户资源
 user.listAsync()
 .then(res => console.log(res))
 .catch(err => console.log(err))
- 
+
 // 获取ID=123用户的信息
 user.getAsync({ id: 123 })
 .then(res => console.log(res))
 .catch(err => console.log(err))
- 
+
 // 新建一个用户
 user.saveAsync({ name: '微信小程序' })
 .then(res => console.log(res))
 .catch(err => console.log(err))
- 
+
 // 更新ID=123用户的信息
 user.updateAsync({ id: 123 },{ name: 'skyvow' })
 .then(res => console.log(res))
 .catch(err => console.log(err))
- 
+
 // 删除ID=123用户的信息
 user.deleteAsync({ id: 123 })
 .then(res => console.log(res))
 .catch(err => console.log(err))
- 
+
 // 返回的实例对象包含六个默认方法，getAsync、saveAsync、queryAsync、removeAsync、deleteAsync与一个自定义方法listAsync
 //
 // user.getAsync({id: 123}) 向/api/users/123发起一个GET请求，params作为填充url中变量，一般用来请求某个指定资源
@@ -184,28 +169,28 @@ import WxValidate from 'helpers/WxValidate'
 Page({
     data: {
     	form: {
-			name : '', 
-			email: '', 
+			name : '',
+			email: '',
         },
     },
     onLoad() {
     	this.WxValidate = new WxValidate({
 			name: {
-				required: true, 
-				minlength: 2, 
-				maxlength: 10, 
+				required: true,
+				minlength: 2,
+				maxlength: 10,
 			},
 			email: {
-				required: true, 
-				email: true, 
+				required: true,
+				email: true,
 			},
 		}, {
 			name: {
-				required: '请输入姓名', 
+				required: '请输入姓名',
 			},
 			email: {
-				required: '请输入邮箱', 
-				email: '请输入有效的电子邮件地址', 
+				required: '请输入邮箱',
+				email: '请输入有效的电子邮件地址',
 			},
 		})
     },
@@ -219,37 +204,6 @@ Page({
 	},
 })
 ```
-
-## 项目截图:
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-11.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-12.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-13.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-01.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-02.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-03.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-04.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-05.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-06.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-14.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-07.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-08.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-09.png" width="375px" style="display:inline;">
-
-<img src="https://github.com/skyvow/m-mall/blob/master/assets/images/screenshots/screenshorts-10.png" width="375px" style="display:inline;">
-
 ##	贡献
 
 有任何意见或建议都欢迎提 issue
